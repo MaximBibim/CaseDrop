@@ -149,17 +149,7 @@ var CASES=[
 ["c96","Тьма II","ТИР 36",110000000000000,"#f0abfc","DARK2"],
 ["c97","Свет II","ТИР 37",150000000000000,"#94a3b8","LIGHT2"],
 ["c98","Пустота II","ТИР 38",200000000000000,"#e5e7eb","VOID2"],
-["c99","Абсолют II","ТИР 39",260000000000000,"#c4b5fd","ABSOL2"],["c100","Запредел II","ТИР 40",340000000000000,"#fbbf24","BEYOND2"],["c101","Эфир III","ТИР 41",450000000000000,"#38bdf8","AETHER3"],["c102","Квант III","ТИР 42",590000000000000,"#22d3ee","QUANT3"],["c103","Нейтрон III","ТИР 43",770000000000000,"#a855f7","NEUTRON3"],["c104","Протон III","ТИР 44",1100000000000000,"#e879f9","PROTON3"],["c105","Фотон III","ТИР 45",1500000000000000,"#f472b6","PHOTON3"],
-["c106","Тахион III","ТИР 46",2000000000000000,"#f59e0b","TACHYON3"],
-["c107","Кварк III","ТИР 47",2600000000000000,"#fcd34d","QUARK3"],
-["c108","Глюон III","ТИР 48",3400000000000000,"#4ade80","GLUON3"],
-["c109","Лептон III","ТИР 49",4500000000000000,"#34d399","LEPTON3"],
-["c110","Бозон III","ТИР 50",5900000000000000,"#ef4444","BOSON3"],
-["c111","Антиматерия III","ТИР 51",7700000000000000,"#fb923c","ANTI3"],
-["c112","Плазма III","ТИР 52",11000000000000000,"#c084fc","PLASMA3"],
-["c113","Вакуум III","ТИР 53",15000000000000000,"#818cf8","VACUUM3"],
-["c114","Хаос III","ТИР 54",20000000000000000,"#67e8f9","CHAOS3"],
-["c115","Порядок III","ТИР 55",26000000000000000,"#fde047","ORDER3"],
+["c99","Абсолют II","ТИР 39",260000000000000,"#c4b5fd","ABSOL2"],["c100","Запредел II","ТИР 40",340000000000000,"#fbbf24","BEYOND2"],["c101","Эфир III","ТИР 41",450000000000000,"#38bdf8","AETHER3"],["c102","Квант III","ТИР 42",590000000000000,"#22d3ee","QUANT3"],["c103","Нейтрон III","ТИР 43",770000000000000,"#a855f7","NEUTRON3"],["c104","Протон III","ТИР 44",1100000000000000,"#e879f9","PROTON3"],["c105","Фотон III","ТИР 45",1500000000000000,"#f472b6","PHOTON3"],["c106","Тахион III","ТИР 46",2000000000000000,"#f59e0b","TACHYON3"],["c107","Кварк III","ТИР 47",2600000000000000,"#fcd34d","QUARK3"],["c108","Глюон III","ТИР 48",3400000000000000,"#4ade80","GLUON3"],["c109","Лептон III","ТИР 49",4500000000000000,"#34d399","LEPTON3"],["c110","Бозон III","ТИР 50",5900000000000000,"#ef4444","BOSON3"],["c111","Антиматерия III","ТИР 51",7700000000000000,"#fb923c","ANTI3"],["c112","Плазма III","ТИР 52",11000000000000000,"#c084fc","PLASMA3"],["c113","Вакуум III","ТИР 53",15000000000000000,"#818cf8","VACUUM3"],["c114","Хаос III","ТИР 54",20000000000000000,"#67e8f9","CHAOS3"],["c115","Порядок III","ТИР 55",26000000000000000,"#fde047","ORDER3"],
 ["c116","Тьма III","ТИР 56",34000000000000000,"#f0abfc","DARK3"],
 ["c117","Свет III","ТИР 57",45000000000000000,"#94a3b8","LIGHT3"],
 ["c118","Пустота III","ТИР 58",59000000000000000,"#e5e7eb","VOID3"],
@@ -299,10 +289,47 @@ var CASES=[
 ["c257","Спираль V","ТИР 197",1.4999999999999999e+34,"#94a3b8","SPIRAL5"],["c258","Матрица V","ТИР 198",2e+34,"#e5e7eb","MATRIX5"],
 ["c259","Код V","ТИР 199",2.6e+34,"#c4b5fd","CODE5"],["c260","Симуляция V","ТИР 200",3.4e+34,"#fbbf24","SIM5"]
 ];function fmt(n){n=Math.round(n);if(n>=1e33)return (n/1e33).toFixed(2).replace(/\.?0+$/,"")+"Dc";if(n>=1e30)return (n/1e30).toFixed(2).replace(/\.?0+$/,"")+"No";if(n>=1e27)return (n/1e27).toFixed(2).replace(/\.?0+$/,"")+"Oc";if(n>=1e24)return (n/1e24).toFixed(2).replace(/\.?0+$/,"")+"Sp";if(n>=1e21)return (n/1e21).toFixed(2).replace(/\.?0+$/,"")+"Sx";if(n>=1e18)return (n/1e18).toFixed(2).replace(/\.?0+$/,"")+"Qi";if(n>=1e15)return (n/1e15).toFixed(2).replace(/\.?0+$/,"")+"Qa";if(n>=1e12)return (n/1e12).toFixed(2).replace(/\.?0+$/,"")+"T";if(n>=1e9)return (n/1e9).toFixed(2).replace(/\.?0+$/,"")+"B";if(n>=1e6)return (n/1e6).toFixed(2)+"M";if(n>=1000)return (n/1000).toFixed(1)+"K";return ""+n}
-function near(t,k,out){var c=[];for(var i=0;i<WEAPONS.length;i++)if(out.indexOf(i)<0)c.push(i);c.sort(function(a,b){return Math.abs(WEAPONS[a][2]-t)-Math.abs(WEAPONS[b][2]-t)});return c.slice(0,k)}
-function poolFor(price){var p=price>0?price:120,out=[],spec=[[p*0.22,3],[p*0.45,3],[p*0.9,3],[p*1.2,4],[p*2.5,3],[p*8,2],[p*40,2]];for(var s=0;s<spec.length;s++){var arr=near(spec[s][0],spec[s][1],out);for(var j=0;j<arr.length;j++)if(out.indexOf(arr[j])<0)out.push(arr[j])}return out}
-function balance75(pool,price){var idx=pool.slice();if(price<=0)return idx.map(function(i){return[i,100]});var be=[],junk=[];for(var i=0;i<idx.length;i++){var w=WEAPONS[idx[i]];if(w[2]>price)be.push(idx[i]);else if(w[2]<price)junk.push(idx[i])}be.sort(function(a,b){return WEAPONS[a][2]-WEAPONS[b][2]});junk.sort(function(a,b){return WEAPONS[a][2]-WEAPONS[b][2]});var out=[],k=be.length,wr=[],s=0,i;for(i=0;i<k;i++)wr.push(Math.pow(0.62,i));for(i=0;i<k;i++)s+=wr[i];for(i=0;i<k;i++)out.push([be[i],Math.max(1,Math.round(7500*wr[i]/(s||1)))]);k=junk.length;wr=[];s=0;for(i=0;i<k;i++)wr.push(Math.pow(0.6,i));for(i=0;i<k;i++)s+=wr[i];for(i=0;i<k;i++)out.push([junk[i],Math.max(1,Math.round(2500*wr[i]/(s||1)))]);return out}
-for(var ci=0;ci<CASES.length;ci++){CASES[ci].push(balance75(poolFor(CASES[ci][3]),CASES[ci][3]))}
+function near(t,k,out){var c=[];for(var i=0;i<WEAPONS.length;i++)if(out.indexOf(i)<0)c.push(i);c.sort(function(a,b){return Math.abs(WEAPONS[a][2]-t)-Math.abs(WEAPONS[b][2]-t)});return c.slice(0,k)}var WSORT=null;
+function buildIndex(){WSORT=[];for(var i=0;i<WEAPONS.length;i++)WSORT.push(i);WSORT.sort(function(a,b){return WEAPONS[a][2]-WEAPONS[b][2]})}
+function poolFor(price,rich){
+  var p=price>0?price:120;
+  var lo=0,hi=WSORT.length;
+  while(lo<hi){var m=(lo+hi)>>1;if(WEAPONS[WSORT[m]][2]<=p)lo=m+1;else hi=m}
+  var eq=0,hi2=lo;
+  while(eq<hi2){var m2=(eq+hi2)>>1;if(WEAPONS[WSORT[m2]][2]<p)eq=m2+1;else hi2=m2}
+  var above=WSORT.slice(lo,lo+7);  var below=WSORT.slice(Math.max(0,eq-7),eq).reverse();
+  return below.concat(above)}
+function balance75(pool,price){
+  var idx=pool.slice();  if(price<=0)return idx.map(function(i){return[i,100]});
+  var be=[],junk=[],i,w;  for(i=0;i<idx.length;i++){w=WEAPONS[idx[i]];if(w[2]>price)be.push(idx[i]);else if(w[2]<price)junk.push(idx[i])}
+  be.sort(function(a,b){return WEAPONS[a][2]-WEAPONS[b][2]});  junk.sort(function(a,b){return WEAPONS[a][2]-WEAPONS[b][2]});
+  var out=[],wr=[],s=0,k;  k=be.length;wr=[];s=0;
+  for(i=0;i<k;i++)wr.push(Math.pow(0.62,i));
+  for(i=0;i<k;i++)s+=wr[i];
+  for(i=0;i<k;i++)out.push([be[i],Math.max(1,Math.round(7500*wr[i]/(s||1)))]);
+  k=junk.length;wr=[];s=0;
+  for(i=0;i<k;i++)wr.push(Math.pow(0.6,i));
+  for(i=0;i<k;i++)s+=wr[i];
+  for(i=0;i<k;i++)out.push([junk[i],Math.max(1,Math.round(2500*wr[i]/(s||1)))]);
+  return out
+}
+
+function growCatalog(){
+  var i,j,k,rn=0,p,above,below;
+  for(i=0;i<CASES.length;i++){
+    p=CASES[i][3];
+    if(p<=0)continue;
+    above=0;below=0;
+    for(j=0;j<WEAPONS.length;j++){var v=WEAPONS[j][2];if(v>p)above++;else if(v<p)below++}
+    var hiM=[1.15,1.4,1.8,2.4,3.5,6,12];
+    for(k=0;k<7-Math.min(7,above);k++){rn++;WEAPONS.push(['Реликвия '+rn,'RELIC '+rn,Math.round(p*hiM[k]),'knife','myth'])}
+    var loM=[0.9,0.8,0.65,0.5,0.35,0.2,0.1];
+    for(k=0;k<7-Math.min(7,below);k++){rn++;WEAPONS.push(['Реликвия '+rn,'RELIC '+rn,Math.max(1,Math.round(p*loM[k])),'sniper','myth'])}
+  }
+  buildIndex();
+}
+growCatalog();
+for(var ci=0;ci<CASES.length;ci++){CASES[ci].push(balance75(poolFor(CASES[ci][3],ci>=CASES.length-100),CASES[ci][3]))}
 function chances(c){var it=c[6],t=0,i;for(i=0;i<it.length;i++)t+=it[i][1];return it.map(function(x){return[WEAPONS[x[0]],x[1]/t*100]})}
 function payback(c){var p=c[3];return chances(c).filter(function(x){return x[0][2]>p}).reduce(function(a,b){return a+b[1]},0)}
 function rollIdx(c){var it=c[6],t=0,i;for(i=0;i<it.length;i++)t+=it[i][1];var r=Math.random()*t,acc=0;for(i=0;i<it.length;i++){acc+=it[i][1];if(r<=acc)return it[i][0]}return it[it.length-1][0]}
@@ -417,28 +444,19 @@ var wReady=0;for(i=1;i<=wl&&i<=100;i++)if(!s.way[i])wReady++;
 h+='<div class="stat" style="flex-direction:column;align-items:stretch"><div style="display:flex;justify-content:space-between"><span>Уровень '+wl+'</span><b style="color:var(--gold)">'+wc+' / 100</b></div><div class="bar"><div style="width:'+Math.min(100,wc)+'%"></div></div></div>';
 if(wReady>0)h+='<button class="btn green" style="margin-top:6px" onclick="claimAllWay()">ЗАБРАТЬ ВСЁ ('+wReady+')</button>';
 h+='<div id="waytrack" style="display:flex;gap:6px;overflow-x:auto;padding:8px 2px;scroll-snap-type:x mandatory">';
-for(i=1;i<=100;i++){
-  var rw=wayReward(i),got=!!s.way[i],lock=i>wl;
-  h+='<div style="flex:0 0 78px;scroll-snap-align:center;border:1px solid '+(got?'var(--green)':(lock?'#241a3d':'var(--gold)'))+';background:'+(got?'rgba(52,211,153,.12)':(lock?'#100d1b':'rgba(250,204,21,.10)'))+';border-radius:12px;padding:8px 5px;text-align:center;opacity:'+(lock?0.55:1)+'">'
-    +'<div style="font-size:10px;font-weight:900;color:'+(got?'var(--green)':(lock?'var(--dim)':'var(--gold)'))+'">УР. '+i+'</div>'
-    +'<div style="font-size:9px;margin:5px 0;color:'+(lock?'var(--dim)':'#e8e4f5')+'">'+fmt(rw)+'</div>'
-    +(got?'<div style="font-size:15px;color:var(--green)">✓</div>':(lock?'<div style="font-size:11px">🔒</div>':'<div class="chip" style="padding:3px 6px;font-size:9px" onclick="claimWay('+i+')">ЗАБРАТЬ</div>'))
-    +'</div>';
+for(i=1;i<=100;i++){  var rw=wayReward(i),got=!!s.way[i],lock=i>wl;
+  h+='<div style="flex:0 0 78px;scroll-snap-align:center;border:1px solid '+(got?'var(--green)':(lock?'#241a3d':'var(--gold)'))+';background:'+(got?'rgba(52,211,153,.12)':(lock?'#100d1b':'rgba(250,204,21,.10)'))+';border-radius:12px;padding:8px 5px;text-align:center;opacity:'+(lock?0.55:1)+'">'    +'<div style="font-size:10px;font-weight:900;color:'+(got?'var(--green)':(lock?'var(--dim)':'var(--gold)'))+'">УР. '+i+'</div>'    +'<div style="font-size:9px;margin:5px 0;color:'+(lock?'var(--dim)':'#e8e4f5')+'">'+fmt(rw)+'</div>'    +(got?'<div style="font-size:15px;color:var(--green)">✓</div>':(lock?'<div style="font-size:11px">🔒</div>':'<div class="chip" style="padding:3px 6px;font-size:9px" onclick="claimWay('+i+')">ЗАБРАТЬ</div>'))    +'</div>';
 }
-h+='</div>';
-setTimeout(function(){try{var t=document.getElementById('waytrack');if(t){var e=t.children[Math.min(99,(G.level||1)-1)];if(e)t.scrollLeft=Math.max(0,e.offsetLeft-t.clientWidth/2+e.clientWidth/2)}}catch(e){}},60);
-return h
+h+='</div>';setTimeout(function(){try{var t=document.getElementById('waytrack');if(t){var e=t.children[Math.min(99,(G.level||1)-1)];if(e)t.scrollLeft=Math.max(0,e.offsetLeft-t.clientWidth/2+e.clientWidth/2)}}catch(e){}},60);return h
 }
 function toast(t){var d=document.createElement("div");d.className="toast";d.textContent=t;document.body.appendChild(d);setTimeout(function(){d.remove()},1700)}
 function dailyReward(d){var t=[300,500,800,1200,1800,3000,5000];return d<=7?t[Math.max(1,d)-1]:5000+(d-7)*2000}
 function daily(){
   var now=Date.now()/1000;
   var gap=now-(G.dailyTs||0);
-  if(gap<86400){SFX.lose();toast('Ещё не готово');return}
-  if(gap>=172800)G.streak=0;
+  if(gap<86400){SFX.lose();toast('Ещё не готово');return}  if(gap>=172800)G.streak=0;
   G.streak=(G.streak||0)+1;
-  var rew=dailyReward(G.streak);
-  G.balance+=rew;
+  var rew=dailyReward(G.streak);  G.balance+=rew;
   G.dailyTs=now;
   try{SFX.bonus()}catch(e){}
   save();draw();
@@ -449,8 +467,7 @@ function cardHTML(wi){var w=WEAPONS[wi],rc=RAR[w[4]][0];return '<div class="sc">
 var spinning=false;
 function spin(wins,c){  if(spinning)return;
   spinning=true;
-  var ov=document.createElement('div');
-  ov.className='ov';
+  var ov=document.createElement('div');  ov.className='ov';
   var strip=[],i;  for(i=0;i<90;i++)strip.push(Math.floor(Math.random()*WEAPONS.length));
   var target=76;
   for(i=0;i<wins.length&&i<10;i++)strip[target+i]=wins[i];
