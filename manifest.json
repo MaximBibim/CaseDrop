@@ -1,7 +1,7 @@
 {
   "name": "CASE DROP",
   "short_name": "CASEDROP",
-  "description": "Симулятор кейсов: открывай, продавай, апгрейди",
+  "description": "Симулятор кейсов: открывай, продавай, апгрейди!",
   "start_url": "./index.html",
   "display": "standalone",
   "orientation": "portrait",
